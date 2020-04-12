@@ -61,11 +61,13 @@ main()
   tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ☺ " 
 
   tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
+  tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${green}] #($current_dir/vpn_status.sh) "
   tmux set-option -ga status-right "#[fg=${dark_gray},bg=${cyan}]#($current_dir/network.sh) "
-  if $show_weather; then
-    tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #(cat $current_dir/../data/weather.txt) " 
-  fi
-  tmux set-option -ga status-right "#[fg=${white},bg=${dark_purple}] %a %m/%d %I:%M %p #(date +%Z) "
+  tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${orange}] #($current_dir/lang.sh) "
+  # if $show_weather; then
+  #   tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #(cat $current_dir/../data/weather.txt) " 
+  # fi
+  tmux set-option -ga status-right "#[fg=${white},bg=${dark_purple}] ⌛ %a %m/%d %I:%M %p #(date +%Z) "
   
   # window tabs 
   tmux set-window-option -g window-status-current-format "#[fg=${white},bg=${dark_purple}] #I #W "
