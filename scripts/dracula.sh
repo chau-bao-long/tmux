@@ -18,7 +18,6 @@ main()
 {
   # set current directory variable
   current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-  show_weather=$(get_tmux_option "@dracula-show-weather" true)
 
   # Dracula Color Pallette
   white='#f8f8f2'
@@ -32,11 +31,7 @@ main()
   red='#ff5555'
   pink='#ff79c6'
   yellow='#f1fa8c'
-
-  # start weather script in background
-  if $show_weather; then
-    $current_dir/sleep_weather.sh &
-  fi
+  black='#000000'
 
   # set refresh interval
   tmux set-option -g status-interval 5
@@ -62,11 +57,9 @@ main()
 
   tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
   tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${green}] #($current_dir/vpn_status.sh) "
+  tmux set-option -ga status-right "#[fg=${dark_gray},bg=${yellow}]#($current_dir/volume.sh) "
   tmux set-option -ga status-right "#[fg=${dark_gray},bg=${cyan}]#($current_dir/network.sh) "
   tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${orange}] #($current_dir/lang.sh) "
-  # if $show_weather; then
-  #   tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #(cat $current_dir/../data/weather.txt) " 
-  # fi
   tmux set-option -ga status-right "#[fg=${white},bg=${dark_purple}] ⌛ %a %m/%d %I:%M %p #(date +%Z) "
   
   # window tabs 
