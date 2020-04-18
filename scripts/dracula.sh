@@ -55,11 +55,11 @@ main()
 
   tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ☺ " 
 
-  tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
-  tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${green}] #($current_dir/vpn_status.sh) "
+  tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/cpu.sh) "
+  tmux set-option -ga status-right "#[fg=${dark_gray},bg=${green}] #($current_dir/vpn_status.sh) "
   tmux set-option -ga status-right "#[fg=${dark_gray},bg=${yellow}]#($current_dir/volume.sh) "
   tmux set-option -ga status-right "#[fg=${dark_gray},bg=${cyan}]#($current_dir/network.sh) "
-  tmux set-option -ga  status-right "#[fg=${dark_gray},bg=${orange}] #($current_dir/lang.sh) "
+  tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #($current_dir/battery.sh) "
   tmux set-option -ga status-right "#[fg=${white},bg=${dark_purple}] ⌛ %a %m/%d %I:%M %p #(date +%)"
   
   # window tabs 
