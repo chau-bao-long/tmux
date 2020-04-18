@@ -1,2 +1,3 @@
 #! /bin/bash
-ps -axC -o %cpu | awk '{s+=$1} END {print "☷ " "CPU " s "%"}'
+mostUsedCPU=$(ps -axCo args,pcpu -r | head -n 2 | tail -n1 | tail -c 40)
+echo "☷ $mostUsedCPU%"
