@@ -3,10 +3,10 @@
 isMute=$(/usr/bin/osascript -e 'output muted of (get volume settings)' )
 
 if [ "$isMute" == "true" ]; then
-  echo " VOL Muted"
+  echo " 🔇 Muted"
 elif [ "$isMute" == "missing value" ]; then
-  echo " VOL External"
+  echo " 📢 External"
 else
   curVolume=$(osascript -e 'output volume of (get volume settings)')
-  echo " VOL $curVolume"
+  echo " 🔊 $curVolume"
 fi
