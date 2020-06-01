@@ -45,7 +45,7 @@ main()
   tmux set-option -g status-right-length 120
 
   # pane border styling
-  tmux set-option -g pane-active-border-style "fg=${dark_purple}"
+  tmux set-option -g pane-active-border-style "fg=${green}"
   tmux set-option -g pane-border-style "fg=${dark_gray}"
 
   # message styling
