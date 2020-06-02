@@ -61,8 +61,8 @@ main()
   tmux set-option -ga status-right "#[bg=${black},fg=${yellow}]#($current_dir/volume.sh) "
   tmux set-option -ga status-right "#[bg=${black},fg=${cyan}]#($current_dir/network.sh) "
   tmux set-option -ga status-right "#[bg=${black},fg=${red}] #($current_dir/input_source_script.sh) "
-  tmux set-option -ga status-right "#[bg=${black},fg=${orange}] #($current_dir/battery.sh) "
-  tmux set-option -ga status-right "#[bg=${black},fg=${light_purple}] %a %m/%d %I:%M %p #(date +%)"
+  tmux set-option -ga status-right "#[bg=${black},fg=${orange}] #($current_dir/network_traffic.sh) "
+  tmux set-option -ga status-right "#[bg=${black},fg=${light_purple}] #($current_dir/hd_script.sh)"
   
   # window tabs 
   tmux set-window-option -g window-status-current-format "#[fg=${black},bg=${light_orange}] #I #W "
