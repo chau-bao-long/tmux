@@ -42,7 +42,7 @@ main()
 
   # set length 
   tmux set-option -g status-left-length 100
-  tmux set-option -g status-right-length 120
+  tmux set-option -g status-right-length 150
 
   # pane border styling
   tmux set-option -g pane-active-border-style "fg=${green}"
